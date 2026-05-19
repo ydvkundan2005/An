@@ -32,7 +32,6 @@ export const metadata: Metadata = {
   keywords: Keywords,
   metadataBase: new URL("https://aarab.vercel.app"),
 
-
   alternates: {
     canonical: "https://aarab.vercel.app",
     languages: {
@@ -108,7 +107,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-
 
   twitter: {
     card: "summary_large_image",

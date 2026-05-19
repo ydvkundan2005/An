@@ -16,7 +16,7 @@ const H1_Component: FC<H1ComponentProps> = ({ name, y_initialValue }) => {
     <motion.h1
       initial={{ y: y_initialValue, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`text-slate-200 text-4xl ${nasalization.className}`}
     >
       {name}
@@ -28,10 +28,10 @@ export const PreLoader = () => {
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
-    // Hide preloader after animation completes
+    // Hide preloader after animation completes - reduced from 3500ms
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 3500); // Adjust timing as needed
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -43,7 +43,7 @@ export const PreLoader = () => {
           className="overflow-x-hidden w-full h-screen fixed inset-0 z-50"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center justify-center fixed h-full w-full">
             <Background />
@@ -53,19 +53,19 @@ export const PreLoader = () => {
               initial={{ opacity: 1 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.4 }}
             >
-              <H1_Component name={selfData.first_name} y_initialValue={100} />
+              <H1_Component name={selfData.first_name} y_initialValue={40} />
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 className="mx-2"
               >
                 /
               </motion.span>
-              <H1_Component name={selfData.last_name} y_initialValue={-100} />
+              <H1_Component name={selfData.last_name} y_initialValue={-40} />
             </motion.div>
           </div>
         </motion.div>

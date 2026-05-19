@@ -17,45 +17,47 @@ const roles = [
   "Problem Setter",
   "Student Developer",
   "Creative Developer",
-  "UI/UX Engineer"
+  "UI/UX Engineer",
 ];
 
 const skills = [
   // Web Frameworks & Libraries
-  "Next.js 15",
+  "Next.js",
   "React.js",
-  "React Server Components",
-  "TypeScript",
-  "Tailwind CSS",
-  "Framer Motion",
+  "Angular",
+  "Django",
+  "FastAPI",
   "Node.js",
   "Express.js",
-  "Redux Toolkit",
-  "Zustand",
+  "TypeScript",
+  "Tailwind CSS",
 
   // Database & Backend
   "PostgreSQL",
   "Supabase",
   "MongoDB",
-  "Prisma ORM",
-  "GraphQL",
+  "ChromaDB",
+  "Convex",
   "REST API",
-  "Serverless Functions",
-  "Edge Runtime",
 
   // AI & Systems
   "Machine Learning",
-  "LLM Integration",
-  "Ollama",
-  "RAG Pipelines",
+  "PyTorch",
   "LangChain",
-  "Vector Databases",
-  "C++ Optimization",
-  "Python Automation",
+  "Ollama",
+  "Groq",
+  "VAPI",
+  "Whisper",
+  "Gemini",
+  "OpenRouter",
+  "RNN/LSTM",
+  "Python",
   "Docker",
-  "Kubernetes",
+  "AWS EC2",
+  "Jenkins",
+  "n8n",
   "CI/CD Pipelines",
-  "Git & GitHub"
+  "Git & GitHub",
 ];
 
 const projects = [
@@ -65,7 +67,11 @@ const projects = [
   "Bhagavad Gita API",
   "Sorting Algorithm Visualizer",
   "Portfolio Website Next.js",
-  "AI Powered Application"
+  "AI Powered Application",
+  "TestIQ",
+  "VidyaMarg",
+  "Curely",
+  "Ideascribe",
 ];
 
 const locations = [
@@ -78,7 +84,7 @@ const locations = [
   "Odisha",
   "Bangalore",
   "Remote",
-  "Worldwide"
+  "Worldwide",
 ];
 
 const longTail = [
@@ -92,7 +98,7 @@ const longTail = [
   "Freelance Web Developer India",
   "Collaborate on Open Source",
   "Technical Writer and Developer",
-  "Hackathon Winner Portfolio"
+  "Hackathon Winner Portfolio",
 ];
 
 export const Keywords = [

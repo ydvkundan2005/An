@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import { MeshGradient } from "@paper-design/shaders-react";
 
 export const Background = () => {

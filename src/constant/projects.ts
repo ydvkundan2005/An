@@ -1,41 +1,34 @@
 export const projectsData = [
   {
-    name: "AN",
+    name: "TestIQ",
     description:
-      "A personal portfolio built with a focus on performance, SEO, and analytics. Includes structured metadata, full integration with modern analytics tools, and scores 91+ in real-world performance tests.",
-    github_link: "https://github.com/aarabii/an",
-    demo: "https://aarab.vercel.app/",
-    tech: ["Framer Motion", "EmailJS", "Vercel Analytics"],
+      "Built a CLI RAG pipeline using LangChain and ChromaDB to analyze codebases and auto-generate unit tests. Engineered a self-correcting validation loop with Tree-sitter and Ollama to eliminate invalid test output.",
+    github_link: "https://github.com/aarabii/testiq",
+    demo: "",
+    tech: ["LangChain", "ChromaDB", "Ollama", "Tree-sitter", "Python"],
   },
   {
-    name: "Orphia",
+    name: "VidyaMarg",
     description:
-      "An AI-powered music generator that turns text prompts into original soundtracks. Designed for musicians and content creators, it features a clean, modern UI and customizable music generation workflows.",
-    github_link: "https://github.com/aarabii/Orphia-AI-Music-Generator",
-    demo: "https://orphia.vercel.app/",
-    tech: ["Hugging Face", "Clerk", "API Integration"],
+      "Developed a full-stack AI learning path generator integrating LLaMA 3.1 70B via Groq. Architected graph-based path rendering with NetworkX and React Flow, visualizing learning paths as interactive DAGs backed by Supabase.",
+    github_link: "https://github.com/aarabii/vidyamarg",
+    demo: "https://vidya-marg.vercel.app/",
+    tech: ["Next.js", "FastAPI", "Groq", "NetworkX", "Supabase", "React Flow"],
+  },
+  {
+    name: "Curely",
+    description:
+      "Designed an end-to-end real-time voice AI assistant for medical Q&A using VAPI and Whisper, with Gemini handling response generation. Reduced inference cost through targeted model selection via Openrouter.",
+    github_link: "https://github.com/aarabii/curely",
+    demo: "https://curely.vercel.app/",
+    tech: ["VAPI", "OpenAI Whisper", "Gemini", "Openrouter"],
   },
   {
     name: "Ideascribe",
     description:
-      "A collaborative workspace that supports real-time editing, authentication, file uploads, and autosaving — all built to boost creativity and productivity in team environments.",
+      "Engineered a note taking application for developers, integrating BlockNote for dynamic rich-text editing, Convex for rapid state synchronization, and Edge Store for scalable cloud asset management.",
     github_link: "https://github.com/aarabii/ideascribe",
     demo: "https://ideascribe.vercel.app/",
-    tech: ["Convex", "Clerk", "Edgestore"],
-  },
-  {
-    name: "CppTestGenAI",
-    description:
-      "A smart test case generator for C++ projects, powered by LLMs. It analyzes source and header files, creates comprehensive test scenarios, and reduces manual testing time by up to 80%.",
-    github_link: "https://github.com/aarabii/CppTestGenAI",
-    tech: ["Ollama", "Caching", "Test Pipeline"],
-  },
-  {
-    name: "CraftoGram",
-    description:
-      "An AI-driven tool for generating Instagram bios and content. Features dynamic prompt handling and real-time streaming output to help creators craft engaging profiles effortlessly.",
-    github_link: "https://github.com/aarabii/crafto",
-    demo: "https://craftogram.vercel.app/",
-    tech: ["Groq", "Vercel AI SDK", "Zod"],
+    tech: ["Convex", "Clerk", "React", "Blocknote", "Edgestore"],
   },
 ];

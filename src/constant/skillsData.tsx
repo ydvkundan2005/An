@@ -56,72 +56,58 @@ export const skillsData: SkillsDataProps[] = [
   {
     title: "Languages & Databases",
     data: [
-      { title: "C/C++", logoComponent: TbBrandCpp, color: "#00599C" },
-      { title: "HTML5", logoComponent: FaHtml5, color: "#E34F26" },
-      { title: "CSS3", logoComponent: FaCss3, color: "#1572B6" },
-      { title: "Java", logoComponent: FaJava, color: "#007396" },
-      { title: "JavaScript", logoComponent: FaSquareJs, color: "#F7DF1E" },
       { title: "TypeScript", logoComponent: SiTypescript, color: "#3178C6" },
+      { title: "JavaScript", logoComponent: FaSquareJs, color: "#F7DF1E" },
       { title: "Python", logoComponent: FaPython, color: "#3776AB" },
       { title: "MongoDB", logoComponent: SiMongodb, color: "#47A248" },
-      { title: "MySQL", logoComponent: SiMysql, color: "#4479A1" },
-      { title: "Oracle SQL", logoComponent: GrOracle, color: "#F80000" },
+      { title: "PostgreSQL", logoComponent: SiMysql, color: "#336791" }, // Using MySQL icon as placeholder if Postgres isn't imported
+      { title: "SQL", logoComponent: GrOracle, color: "#F80000" },
     ],
   },
   {
     title: "Frameworks & Libraries",
     data: [
-      { title: "Bootstrap", logoComponent: FaBootstrap, color: "#7952B3" },
-      { title: "Express.js", logoComponent: SiExpress, color: "#d4d4d8" },
-      { title: "Framer Motion", logoComponent: SiFramer, color: "#0055FF" },
-      { title: "Next.js", logoComponent: SiNextdotjs, color: "#d4d4d8" },
       { title: "React", logoComponent: FaReact, color: "#61DAFB" },
+      { title: "Next.js", logoComponent: SiNextdotjs, color: "#d4d4d8" },
+      { title: "Express.js", logoComponent: SiExpress, color: "#d4d4d8" },
       { title: "Tailwind CSS", logoComponent: SiTailwindcss, color: "#06B6D4" },
+      { title: "Node.js", logoComponent: FaMobile, color: "#339933" }, // placeholder icon
+      { title: "Angular", logoComponent: FaReact, color: "#DD0031" }, // placeholder icon
+      { title: "Django / FastAPI", logoComponent: FaPython, color: "#092E20" },
     ],
   },
   {
-    title: "Dev Tools & Platforms",
+    title: "AI, ML & LLMs",
+    data: [
+      { title: "PyTorch", logoComponent: GiBrain, color: "#EE4C2C" },
+      { title: "LangChain", logoComponent: FaCodeBranch, color: "#1664C0" },
+      { title: "Ollama", logoComponent: FaRobot, color: "#000000" },
+      { title: "Groq / VAPI", logoComponent: MdApi, color: "#F55036" },
+      {
+        title: "Whisper / Gemini",
+        logoComponent: FaBookOpen,
+        color: "#1A73E8",
+      },
+      { title: "ChromaDB", logoComponent: SiMongodb, color: "#47A248" },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
     data: [
       { title: "Git", logoComponent: FaGitAlt, color: "#F05032" },
       { title: "GitHub", logoComponent: FaGithub, color: "#d4d4d8" },
-      { title: "Netlify", logoComponent: SiNetlify, color: "#00C7B7" },
+      {
+        title: "CI/CD & Jenkins",
+        logoComponent: FaTruckMoving,
+        color: "#D24939",
+      },
       { title: "Postman", logoComponent: SiPostman, color: "#FF6C37" },
-      { title: "Replit", logoComponent: SiReplit, color: "#667881" },
-      { title: "Vercel", logoComponent: SiVercel, color: "#d4d4d8" },
-      { title: "Firebase", logoComponent: SiFirebase, color: "#FFCA28" },
-    ],
-  },
-  {
-    title: "Concepts & Technologies",
-    data: [
-      { title: "API Design", logoComponent: MdApi, color: "#5C2D91" },
-      { title: "Accessibility", logoComponent: FaWheelchair, color: "#1E88E5" },
-      { title: "BERT", logoComponent: FaBookOpen, color: "#2196F3" },
-      { title: "CI/CD", logoComponent: FaTruckMoving, color: "#0A66C2" },
-      { title: "LSTM", logoComponent: GiBrain, color: "#FF9800" },
-      { title: "Machine Learning", logoComponent: GiBrain, color: "#3F51B5" },
       {
-        title: "Performance Optimization",
-        logoComponent: FaGaugeHigh,
-        color: "#388E3C",
+        title: "Supabase & Convex",
+        logoComponent: SiFirebase,
+        color: "#3ECF8E",
       },
-      { title: "Responsive Design", logoComponent: FaMobile, color: "#009688" },
-      {
-        title: "SEO Optimization",
-        logoComponent: FaSearchengin,
-        color: "#FF5722",
-      },
-      {
-        title: "Software Development",
-        logoComponent: FaLaptopCode,
-        color: "#607D8B",
-      },
-      { title: "Test Automation", logoComponent: FaRobot, color: "#9C27B0" },
-      {
-        title: "Version Control",
-        logoComponent: FaCodeBranch,
-        color: "#4CAF50",
-      },
+      { title: "AWS EC2", logoComponent: SiVercel, color: "#FF9900" },
     ],
   },
 ];

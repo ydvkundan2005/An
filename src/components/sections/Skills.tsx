@@ -77,16 +77,14 @@ const Marquee: FC<MarqueeProps> = ({ skills, direction }) => {
 export const Skills = () => {
   return (
     <section id="skills" className="py-16 overflow-hidden relative">
-
-
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-8">
           <motion.h2
             className={`${nasalization.className} text-4xl font-bold text-primary`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             My Skills
           </motion.h2>
