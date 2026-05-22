@@ -43,7 +43,7 @@ const itemVariants = {
 export default function Resume() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const PDF_URL = "/docs/Aarab_Nishchal_Resume.pdf";
+  const PDF_URL = "/docs/aarab_nishchal_resume.pdf";
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -59,15 +59,15 @@ export default function Resume() {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
       document.removeEventListener(
         "webkitfullscreenchange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
       document.removeEventListener(
         "mozfullscreenchange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
       document.removeEventListener(
         "MSFullscreenChange",
-        handleFullscreenChange
+        handleFullscreenChange,
       );
     };
   }, []);
@@ -75,7 +75,7 @@ export default function Resume() {
   const toggleFullscreen = () => {
     if (!isFullscreen) {
       const iframe = document.querySelector(
-        "iframe"
+        "iframe",
       ) as HTMLIFrameElementWithFullscreen;
       if (iframe?.requestFullscreen) {
         iframe.requestFullscreen();
@@ -97,7 +97,9 @@ export default function Resume() {
   };
 
   return (
-    <div className={`min-h-screen selection:bg-primary/20 ${nasalization.className}`}>
+    <div
+      className={`min-h-screen selection:bg-primary/20 ${nasalization.className}`}
+    >
       <Background />
       <Navbar />
 
@@ -108,16 +110,20 @@ export default function Resume() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div
+            className="text-center md:text-left"
+            variants={itemVariants}
+          >
             <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-secondary mb-2">
               Resume
             </h1>
-            <p className="text-muted-foreground">
-              View or download my resume
-            </p>
+            <p className="text-muted-foreground">View or download my resume</p>
           </motion.div>
 
-          <motion.div className="flex flex-wrap justify-center gap-4" variants={itemVariants}>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            variants={itemVariants}
+          >
             <motion.button
               onClick={toggleFullscreen}
               className="group relative flex items-center gap-2 px-5 py-3 rounded-xl overflow-hidden transition-colors duration-200 border border-secondary/30 bg-card/30 hover:bg-secondary/10"
@@ -160,7 +166,9 @@ export default function Resume() {
               transition={{ duration: 0.15 }}
             >
               <HiDownload className="w-4 h-4 relative z-10 pointer-events-none" />
-              <span className="relative z-10 pointer-events-none">Download PDF</span>
+              <span className="relative z-10 pointer-events-none">
+                Download PDF
+              </span>
             </motion.a>
           </motion.div>
         </motion.div>

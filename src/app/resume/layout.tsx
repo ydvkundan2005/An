@@ -42,7 +42,7 @@ export default function ResumeLayout({
     <>
       <link
         rel="preload"
-        href="/docs/Aarab_Nishchal_Resume.pdf"
+        href="/docs/aarab_nishchal_resume.pdf"
         as="fetch"
         type="application/pdf"
         crossOrigin="anonymous"
