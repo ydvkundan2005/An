@@ -1,3 +1,5 @@
+import { resumeKeywords } from "./resumeKeywords";
+
 const names = [
   "Aarab Nishchal",
   "Aarab Nishchal Portfolio",
@@ -108,6 +110,7 @@ export const Keywords = [
   ...projects,
   ...locations,
   ...longTail,
+  ...resumeKeywords,
 
   ...roles.flatMap((role) => locations.map((loc) => `${role} in ${loc}`)),
   ...skills.map((skill) => `${skill} Developer`),
