@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api", "/private"],
+        disallow: ["/api", "/private", "/docs/"],
       },
     ],
     sitemap: "https://aarab.vercel.app/sitemap.xml",

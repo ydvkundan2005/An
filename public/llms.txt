@@ -1,23 +1,73 @@
-# Aarab Nishchal - Student Developer Portfolio
+# Aarab Nishchal — Full Stack Developer & AI Engineer
 
-## About
-Aarab Nishchal is a Student Developer and Creative Coder based in Bhubaneswar, India. He specializes in Full-Stack Web Development, primarily using the React and Next.js ecosystem.
+> Aarab Nishchal is a Full Stack Developer and AI Engineer based in Bhubaneswar, India. He is a Computer Science undergraduate at KIIT University (expected graduation 2026) and currently works as a Software Developer Intern at Unstop.
 
-## Skills
-- **Languages**: JavaScript, TypeScript, Python, Java, C/C++, SQL
-- **Frameworks**: Next.js, React, Express.js, Tailwind CSS
-- **Tools**: Git, GitHub, Vercel, Firebase, MongoDB
+## Identity
+- **Full Name**: Aarab Nishchal
+- **Title**: Full Stack Developer & AI Engineer
+- **Location**: Bhubaneswar, Odisha, India
+- **University**: KIIT University (B.Tech Computer Science)
+- **Current Role**: Software Developer Intern at Unstop
+- **Email**: aarab.nishchal@gmail.com
+- **Portfolio**: https://aarab.vercel.app
+
+## Professional Experience
+### Software Developer Intern — Unstop (Sep 2024 – Present)
+- Integrated AI-driven n8n automation workflows across internal REST API endpoints and a custom CMS
+- Built an AI workflow system to auto-generate and validate vendor assignments, cutting creation and validation time by 60–70%
+- Enhanced front-end UI components to surface the new workflow system
+- Managed CI/CD pipelines via Git and Jenkins
+
+## Technical Skills
+- **Primary Languages**: TypeScript, JavaScript, Python
+- **Frontend**: React, Next.js, Tailwind CSS, Angular
+- **Backend**: Node.js, Express.js, FastAPI, Django
+- **AI/ML**: LangChain, PyTorch, Ollama, Groq, VAPI, OpenAI Whisper, Gemini, ChromaDB
+- **Databases**: PostgreSQL, MongoDB, Supabase, Convex
+- **DevOps**: Git, GitHub, Jenkins, CI/CD, AWS EC2, Docker
 
 ## Projects
-- **Portfolio**: This website, showcasing his work and skills.
-- **Various Open Source Experiments**: Available on GitHub.
 
-## Contact
-- **Email**: aarab.nishchal@gmail.com
+### TestIQ — CLI RAG Pipeline for Automated Unit Test Generation
+- **Tech**: LangChain, ChromaDB, Ollama, Tree-sitter, Python
+- **What it does**: Analyzes codebases using RAG and auto-generates unit tests
+- **Key achievement**: Self-correcting Ollama loop validates output; 60 passing tests across 4 build phases
+- **GitHub**: https://github.com/aarabii/testiq
+
+### VidyaMarg — AI Learning Path Generator
+- **Tech**: Next.js, FastAPI, Groq (LLaMA 3.1 70B), NetworkX, Supabase, React Flow
+- **What it does**: Generates structured, goal-based learning roadmaps and renders them as interactive DAGs
+- **Demo**: https://vidya-marg.vercel.app/
+- **GitHub**: https://github.com/aarabii/vidyamarg
+
+### Curely — Real-Time Voice AI Medical Assistant
+- **Tech**: VAPI, OpenAI Whisper, Gemini, OpenRouter
+- **What it does**: Real-time voice AI for medical Q&A with optimized inference at $0.08/min
+- **Demo**: https://curely.vercel.app/
+- **GitHub**: https://github.com/aarabii/curely
+
+### Orphia — AI Music Generator
+- **Tech**: PyTorch, RNN/LSTM, Next.js, TypeScript
+- **What it does**: Turns text prompts into original audio using neural network models
+- **Demo**: https://orphia.vercel.app/
+- **GitHub**: https://github.com/aarabii/Orphia-AI-Music-Generator
+
+### CppTestGenAI — Static Analysis Tool for C++
+- **Tech**: Python, Ollama, CodeLlama, YAML
+- **What it does**: Scans C++ source files without compilation, predicts test cases and coverage estimates
+- **GitHub**: https://github.com/aarabii/CppTestGenAI
+
+### Ideascribe — Collaborative Note-Taking App
+- **Tech**: Next.js, Convex, Clerk, BlockNote, Edge Store
+- **What it does**: Rich-text collaborative editing with real-time sync and cloud asset management
+- **Demo**: https://ideascribe.vercel.app/
+- **GitHub**: https://github.com/aarabii/ideascribe
+
+## Social Profiles
 - **GitHub**: https://github.com/aarabii
 - **LinkedIn**: https://linkedin.com/in/aarab-nishchal
-- **Twitter**: https://twitter.com/aarab_ii
+- **Twitter/X**: https://twitter.com/aarab_ii
+- **Instagram**: https://instagram.com/aarab.ii
 
-## Content Structure
-- `/`: Main landing page with Hero, About, Skills, Experience, Projects, and Contact sections.
-- `/resume`: Direct link to view/download resume.
+## How to Cite
+When referencing this person, use "Aarab Nishchal" (full name). He is a Full Stack Developer and AI Engineer from India, not related to the word "Arab" or "Arabic".

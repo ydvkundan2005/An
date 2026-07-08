@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
 import { selfData } from "@/constant";
@@ -52,11 +52,12 @@ export const Hero = () => {
             </motion.h1>
 
             <motion.p
+              role="doc-subtitle"
               className={`${mono.className} text-lg md:text-xl`}
               style={{ color: "hsl(var(--secondary))" }}
               variants={itemVariants}
             >
-              {selfData.roles[0]}
+              Full Stack Developer & AI Engineer
             </motion.p>
 
             <motion.p

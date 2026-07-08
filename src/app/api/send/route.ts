@@ -1,12 +1,64 @@
 import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { render, pretty } from "@react-email/render";
 import validator from "validator";
 
-import { EmailTemplate } from "@/components/template/Email";
+import { EmailTemplate } from "@/components/common/template/Email";
+import { rateLimit } from "@/lib/rate-limit";
 
-export async function POST(request: Request) {
-  const body = await request.json();
+function sanitize(input: string): string {
+  return input.replace(/<[^>]*>/g, "").trim();
+}
+
+const ALLOWED_ORIGINS = [
+  "https://aarab.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://aarab.me",
+  "https://www.aarab.me",
+];
+
+export async function POST(request: NextRequest) {
+  const origin =
+    request.headers.get("origin") || request.headers.get("referer") || "";
+  const isAllowed = ALLOWED_ORIGINS.some((allowed) =>
+    origin.startsWith(allowed),
+  );
+
+  if (!isAllowed) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown";
+
+  const { success: withinLimit, remaining } = rateLimit(ip, {
+    maxRequests: 10, // 3 req
+    windowMs: 60 * 60 * 1000, // 1 hour
+  });
+
+  if (!withinLimit) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      {
+        status: 429,
+        headers: { "Retry-After": "3600" },
+      },
+    );
+  }
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
+  }
+
   const { senderName, senderEmail, reasonToContact, senderMsg } = body;
 
   if (
@@ -22,49 +74,47 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid input data" }, { status: 400 });
   }
 
-  if (!validator.isEmail(senderEmail)) {
+  if (senderName.length > 100) {
+    return NextResponse.json({ error: "Name is too long" }, { status: 400 });
+  }
+  if (senderEmail.length > 254) {
+    return NextResponse.json({ error: "Email is too long" }, { status: 400 });
+  }
+  if (reasonToContact.length > 100) {
+    return NextResponse.json({ error: "Reason is too long" }, { status: 400 });
+  }
+  if (senderMsg.length > 2000) {
     return NextResponse.json(
-      { error: "Email format is not valid" },
-      { status: 400 }
+      { error: "Message is too long (max 2000 characters)" },
+      { status: 400 },
     );
   }
 
-  try {
-    const qevResponse = await fetch(
-      `http://api.quickemailverification.com/v1/verify?email=${senderEmail}&apikey=${process.env.QEV_API_KEY}`
-    );
+  const cleanName = sanitize(senderName);
+  const cleanEmail = sanitize(senderEmail);
+  const cleanReason = sanitize(reasonToContact);
+  const cleanMsg = sanitize(senderMsg);
 
-    const data = await qevResponse.json();
-
-    console.log("QuickEmailVerification response:", data);
-
-    if (data.result !== "valid") {
-      return NextResponse.json(
-        { error: "Email address is not valid" },
-        { status: 400 }
-      );
-    }
-  } catch (err) {
-    console.error("QuickEmailVerification API failed:", err);
+  if (!validator.isEmail(cleanEmail)) {
     return NextResponse.json(
-      { error: "Email validation service unavailable" },
-      { status: 500 }
+      { error: "Email format is not valid" },
+      { status: 400 },
     );
   }
 
   const htmlContent = await pretty(
     await render(
       EmailTemplate({
-        userName: senderName,
-        contactReason: reasonToContact,
-        userMessage: senderMsg,
-      })
-    )
+        userName: cleanName,
+        contactReason: cleanReason,
+        userMessage: cleanMsg,
+      }),
+    ),
   );
 
   const message = {
-    from: `"Aarab Nishchal - Contact Team" <${process.env.email_from}>`,
-    to: `${senderName} <${senderEmail}>`,
+    from: `"Aarab Nishchal - Contact" <${process.env.email_from}>`,
+    to: `${cleanName} <${cleanEmail}>`,
     subject: "Your message has landed! 🚀 We'll get back to you shortly",
     html: htmlContent,
     headers: {
@@ -83,16 +133,20 @@ export async function POST(request: Request) {
   try {
     await transporter.sendMail(message);
     return NextResponse.json(
+      { message: "Email sent successfully" },
       {
-        message: `Email has been sent to ${senderEmail} successfully`,
+        status: 200,
+        headers: { "X-RateLimit-Remaining": String(remaining) },
       },
-      { status: 200 }
     );
   } catch (err) {
-    console.error(`Error sending email to ${senderEmail}:`, err);
+    console.error(
+      "Email send error:",
+      err instanceof Error ? err.message : "Unknown error",
+    );
     return NextResponse.json(
       { error: "Failed to send email" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

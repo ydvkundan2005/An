@@ -1,3 +1,4 @@
+// @ts-expect-error: Allow side-effect import of global CSS without type declarations
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -11,7 +12,8 @@ import { Keywords } from "@/constant";
 import {
   generatePersonStructuredData,
   generateWebsiteStructuredData,
-  generateOrganizationStructuredData,
+  generateProfilePageStructuredData,
+  generateFAQStructuredData,
 } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
@@ -126,7 +128,8 @@ export default function RootLayout({
 }>) {
   const personStructuredData = generatePersonStructuredData();
   const websiteStructuredData = generateWebsiteStructuredData();
-  const organizationStructuredData = generateOrganizationStructuredData();
+  const profilePageStructuredData = generateProfilePageStructuredData();
+  const faqStructuredData = generateFAQStructuredData();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -149,7 +152,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationStructuredData),
+            __html: JSON.stringify(profilePageStructuredData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqStructuredData),
           }}
         />
         {children}

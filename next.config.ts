@@ -36,15 +36,15 @@ const nextConfig: NextConfig = {
             key: "Referrer-Policy",
             value: "origin-when-cross-origin",
           },
-          {
-            key: "X-Robots-Tag",
-            value: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-          },
         ],
       },
       {
         source: "/docs/:path*",
         headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
+          },
           {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Disposition",
-            value: "inline",
+            value: "attachment",
           },
         ],
       },

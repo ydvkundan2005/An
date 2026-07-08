@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { nasalization } from "@/app/fonts";
 import { selfData } from "@/constant";
@@ -63,7 +63,7 @@ export const About = () => {
                 <div className="relative w-full h-full">
                   <Image
                     src="/images/me.png"
-                    alt="Profile Picture"
+                    alt="Aarab Nishchal — Full Stack Developer and AI Engineer from Bhubaneswar, India"
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 448px"

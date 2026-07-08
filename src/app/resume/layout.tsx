@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { resumeKeywords } from "@/constant";
+
 import { generateResumeStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Resume - Aarab Nishchal",
   description:
     "View and download Aarab Nishchal's professional resume. Student developer with expertise in React, Next.js, and full-stack development.",
-  keywords: resumeKeywords,
+  keywords: ["Aarab Nishchal resume", "Aarab Nishchal CV", "Full Stack Developer resume", "Student Developer resume India"],
   openGraph: {
     title: "Resume - Aarab Nishchal",
     description:

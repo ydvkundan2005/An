@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { FC, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "motion/react";
 
 import { Card } from "../ui/card";
 import { Badge } from "../ui/badge";
@@ -107,6 +106,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                   backgroundColor: "hsl(var(--glass-bg-light))",
                   borderColor: "hsl(var(--glass-border))",
                   color: "hsl(var(--foreground))",
+                  borderRadius: "0.5rem",
                 }}
                 asChild
               >
@@ -126,12 +126,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({
                 <Button
                   size="sm"
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 transition-colors duration-200 font-mono text-xs"
+                  style={{ borderRadius: "0.5rem" }}
                   asChild
                 >
-                  <Link href={demo} target="_blank" rel="noopener noreferrer">
+                  <a href={demo} target="_blank" rel="noopener noreferrer">
                     <FiExternalLink className="w-4 h-4 mr-2" />
                     Demo
-                  </Link>
+                  </a>
                 </Button>
               </motion.div>
             )}
